@@ -6,8 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
-    <h1>This is an example</h1>
+    <h1 id="header">This is an example</h1>
+    <input type="text" id="name" />
+    <button id="submit">Click me</button>
+    <ul id="list"></ul>
+    <script>
+        // document.getElementById("header").addEventListener("click", function() {
+        //     alert(11);
+        // });
+        $("#header").hover(function() {
+            $("#header").css("background-color", "lavender");
+        },
+        function() {
+            $("#header").css("background-color", "transparent");
+        });
+
+        $("#submit").click(function() {
+            var name = $("#name").val();
+            $("#list").append("<li>" + name + "</li>");
+            $("#name").val("");
+        });
+    </script>
 </body>
 </html>
